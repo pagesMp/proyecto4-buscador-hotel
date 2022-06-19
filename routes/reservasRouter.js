@@ -4,7 +4,7 @@ const router = express.Router();
 
 //CRUD
 
- const reservaController = require('../controller/reservaController');
+ const reservaController = require('../controller/reservaController.js');
 
  router.get('/', reservaController.findAll);
  router.get('/reserva/:id', reservaController.findById);
