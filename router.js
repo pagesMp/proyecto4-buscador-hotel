@@ -4,6 +4,6 @@ const reservasRouter = require('./routes/reservasRouter');
 
 
 
-router.use('/', reservasRouter);
+router.use('/api', reservasRouter);
 
 module.exports = router;
