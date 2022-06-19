@@ -4,10 +4,6 @@ const reservasRouter = require('./routes/reservasRouter');
 
 
 
-router.use('/clientes', reservasRouter);
-router.use('/hotel', reservasRouter);
-router.use('/reserva', reservasRouter);
-router.use('/fechas', reservasRouter);
-
+router.use('/', reservasRouter);
 
 module.exports = router;
