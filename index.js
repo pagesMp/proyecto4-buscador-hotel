@@ -13,7 +13,7 @@ app.use(morgan('combined', { stream: logger.stream }));
 app.use(express.json());
 
 //Rutas
-app.get('/', (req, res) => {res.send('Bienvenidos a Express');});
+app.get('/', (req, res) => {res.send('Reservas Hotel');});
 app.use(router);
 
 //Connecting to the database

@@ -1,6 +1,6 @@
 //Importo modelo de datos
 const db = require("../models");
-const reserva = db.reserva;
+const reserva = db.Reserva;
 const Op = db.Sequelize.Op; 
 
 const reservaController = {}; 
