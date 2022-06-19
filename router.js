@@ -2,7 +2,7 @@
 const router = require('express').Router();
 
 //Importamos Routes definidas en views
-const ReservaRouter = require('./routes/reservasRouter');
+const ReservaRouter = require('./views/reservasRouter');
 
 
 //Rutas
