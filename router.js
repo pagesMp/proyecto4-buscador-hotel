@@ -1,13 +1,13 @@
 const router = require('express').Router();
 
-//Importamos Routes definidas en views
-const clientesRouter = require('./models/clientes');
-const reservaRouter = require('./models/reserva');
-const hotelRouter = require('./models/hotel');
+const reservasRouter = require('./routes/reservasRouter');
 
-//Rutas
-router.use('/clientes', clientesRouter);
-router.use('/reserva', reservaRouter);
-router.use('/hotel', hotelRouter);
+
+
+router.use('/clientes', reservasRouter);
+router.use('/hotel', reservasRouter);
+router.use('/reserva', reservasRouter);
+router.use('/fechas', reservasRouter);
+
 
 module.exports = router;
