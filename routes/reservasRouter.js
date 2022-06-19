@@ -11,8 +11,8 @@ const router = express.Router();
  router.get('/cliente/:nombre', reservaController.findByNombre);
  router.get('/cliente/:clienteDni', reservaController.findByClienteDni);
  router.get('/hotel/:hotelId', reservaController.findByHotelId);
- router.get('/fechas/:fechaEntrada', reservaController.findByFechaEntrada);
- router.get('/fechas/:fechaSalida', reservaController.findByFechaSalida);
+ router.get('/reserva/:fechaEntrada', reservaController.findByFechaEntrada);
+ router.get('/reserva/:fechaSalida', reservaController.findByFechaSalida);
 
 
  //definir CRUD rutas

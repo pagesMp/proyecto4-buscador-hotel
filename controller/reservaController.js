@@ -1,6 +1,8 @@
 //Importo modelo de datos
 const db = require("../models");
 const reserva = db.Reserva;
+const cliente = db.Cliente;
+const hotel = db.Hotel;
 const Op = db.Sequelize.Op; 
 
 const reservaController = {}; 
@@ -48,7 +50,7 @@ reservaController.findById = (req, res) => {
   reservaController.findByNombre = (req, res) => {
     const nombre = req.params.nombre;
 
-    reserva.findByPk(nombre, {include: [{ model:reserva}]})
+    reserva.findByPk(nombre, {include: [{ model:cliente}]})
       .then(data => {
         if (data) {
           res.send(data);
@@ -71,7 +73,7 @@ reservaController.findById = (req, res) => {
 reservaController.findByClienteDni = (req, res) => {
   const clienteDni = req.params.clienteDni;
 
-  reserva.findByPk(clienteDni, {include: [{ model:reserva}]})
+  reserva.findByPk(clienteDni, {include: [{ model:cliente}]})
     .then(data => {
       if (data) {
         res.send(data);
@@ -93,7 +95,7 @@ reservaController.findByClienteDni = (req, res) => {
 reservaController.findByHotelId = (req, res) => {
   const hotelId = req.params.hotelId;
 
-  reserva.findByPk(hotelId, {include: [{ model:reserva}]})
+  reserva.findByPk(hotelId, {include: [{ model:hotel}]})
     .then(data => {
       if (data) {
         res.send(data);
