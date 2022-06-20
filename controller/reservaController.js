@@ -10,18 +10,21 @@ const reservaController = {};
 //---------- BUSCAR TODOS LOS REGISTROS -------- 
 
 reservaController.findAll = (req, res) => {
-    
-    reserva.findAll({include: [{ model:reserva}]})
+    const type = req.query.type;
+    var condition = type ? { type: { [Op.like]: `%${type}%` } } : null;
+  
+    category.findAll({ where: condition })
       .then(data => {
         res.send(data);
       })
       .catch(err => {
         res.status(500).send({
           message:
-            err.message || "Some error occurred while retrieving reserva."
+            err.message || "me cago en dios."
         });
       });
-};
+  };
+
 
 // //---------- BUSCAR POR ID --------
 
