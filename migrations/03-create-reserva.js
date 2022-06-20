@@ -13,19 +13,19 @@ module.exports = {
       },
       clienteDni: {
         type: Sequelize.INTEGER,
-        // references: {
-        //   model: 'Cliente',
-        //   key: 'dni'
-        // },
+        references: {
+          model: 'clientes',
+          key: 'dni'
+        },
         onUpdate: 'CASCADE',
         onDelete: 'CASCADE'
       },
       hotelId:{
         type: Sequelize.INTEGER,
-        // references: {
-        //   model: 'Hotel',
-        //   key: 'id'
-        // },
+        references: {
+          model: 'hotel',
+          key: 'id'
+        },
         onUpdate: 'CASCADE',
         onDelete: 'CASCADE'
       },
@@ -39,11 +39,11 @@ module.exports = {
         type: Sequelize.DATE
       },
       createdAt: {
-        allowNull: false,
+        allowNull: true,
         type: Sequelize.DATE
       },
       updatedAt: {
-        allowNull: false,
+        allowNull: true,
         type: Sequelize.DATE
       }
         });
