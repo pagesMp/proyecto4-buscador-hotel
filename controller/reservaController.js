@@ -13,7 +13,7 @@ reservaController.findAll = (req, res) => {
     const type = req.query.type;
     var condition = type ? { type: { [Op.like]: `%${type}%` } } : null;
   
-    category.findAll({ where: condition })
+    reserva.findAll({ where: condition })
       .then(data => {
         res.send(data);
       })
