@@ -16,7 +16,7 @@ app.use(express.json());
 app.get('/', (req, res) => {res.send('Reservas Hotel');});
 app.use(router);
 
-//Connecting to the database
+// Connecting to the database
 db.then(()=>{
     //Starting server
         app.listen(PORT, ()=> console.log(`Server on port ${PORT}`.bgGreen.black));

@@ -14,38 +14,14 @@ module.exports = (sequelize, DataTypes) => {
 
   Reserva.init({
 
-    id: {
-      allowNull: false,
-      autoIncrement: true,
-      primaryKey: true,
-      type: DataTypes.INTEGER
-    },
-    type: {
-      type: DataTypes.STRING
-    },
-    clienteDni: {
-      type: DataTypes.INTEGER
-    },
-    hotelId:{
-      type: DataTypes.INTEGER
-    },
-    importeReserva: {
-      type: DataTypes.INTEGER
-    },
-    fechaEntrada: {
-      type: DataTypes.DATE
-    },
-    fechaSalida: {
-      type: DataTypes.DATE
-    },
-    createdAt: {
-      allowNull: false,
-      type: DataTypes.DATE
-    },
-    updatedAt: {
-      allowNull: false,
-      type: DataTypes.DATE
-    } 
+    // id: DataTypes.INTEGER ,   
+    type: DataTypes.STRING,    
+    clienteDni: DataTypes.INTEGER,   
+    hotelId: DataTypes.INTEGER,   
+    importeReserva: DataTypes.INTEGER,    
+    fechaEntrada: DataTypes.DATE,    
+    fechaSalida: DataTypes.DATE  
+     
   },
   
   {

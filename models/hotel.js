@@ -13,27 +13,9 @@ module.exports = (sequelize, DataTypes) => {
 
   Hotel.init({
 
-    id: {
-      allowNull: false,
-      autoIncrement: true,
-      primaryKey: true,
-      type: DataTypes.INTEGER
-    },
-    type: {
-      type:DataTypes.STRING
-    },
-    nombre: {
-      type: DataTypes.STRING
-    },     
-    createdAt: {
-      allowNull: false,
-      type: DataTypes.DATE
-    },
-    updatedAt: {
-      allowNull: false,
-      type: DataTypes.DATE
-    }
-
+    // id: DataTypes.INTEGER,    
+    type: DataTypes.STRING,    
+    nombre:DataTypes.STRING     
   }, 
   
   {

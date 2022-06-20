@@ -1,160 +1,160 @@
 //Importo modelo de datos
 const db = require("../models");
-const reserva = db.Reserva;
-const cliente = db.Cliente;
-const hotel = db.Hotel;
-const Op = db.Sequelize.Op; 
+// const reserva = db.Reserva;
+// const cliente = db.Cliente;
+// const hotel = db.Hotel;
+// const Op = db.Sequelize.Op; 
 
 const reservaController = {}; 
 
 //---------- BUSCAR TODOS LOS REGISTROS -------- 
 
-reservaController.findAll = (req, res) => {
+// reservaController.getAll = (req, res) => {
     
-    reserva.findAll({include: [{ model:reserva}]})
-      .then(data => {
-        res.send(data);
-      })
-      .catch(err => {
-        res.status(500).send({
-          message:
-            err.message || "Some error occurred while retrieving reserva."
-        });
-      });
-};
+//     reserva.findAll({include: [{ model:reserva}]})
+//       .then(data => {
+//         res.send(data);
+//       })
+//       .catch(err => {
+//         res.status(500).send({
+//           message:
+//             err.message || "Some error occurred while retrieving reserva."
+//         });
+//       });
+// };
 
-//---------- BUSCAR POR ID --------
+// //---------- BUSCAR POR ID --------
 
-reservaController.findById = (req, res) => {
-    const id = req.params.id;
+// reservaController.getById = (req, res) => {
+//     const id = req.params.id;
 
-    reserva.findByPk(id, {include: [{ model:reserva}]})
-      .then(data => {
-        if (data) {
-          res.send(data);
-        } else {
-          res.status(404).send({
-            message: `Cannot find Tutorial with id=${id}.`
-          });
-        }
-      })
-      .catch(err => {
-        res.status(500).send({
-          message: `Cannot find Tutorial with id=${id}.`
-        });
-      });
-  };
+//     reserva.findByPk(id, {include: [{ model:reserva}]})
+//       .then(data => {
+//         if (data) {
+//           res.send(data);
+//         } else {
+//           res.status(404).send({
+//             message: `no puede encontrar reserva con=${id}.`
+//           });
+//         }
+//       })
+//       .catch(err => {
+//         res.status(500).send({
+//           message: `no puede encontrar reserva con id=${id}.`
+//         });
+//       });
+//   };
 
-  //---------- BUSCAR POR NOMBRE --------
+//   //---------- BUSCAR POR NOMBRE --------
 
-  reservaController.findByNombre = (req, res) => {
-    const nombre = req.params.nombre;
+//   reservaController.getByNombre = (req, res) => {
+//     const nombre = req.params.nombre;
 
-    reserva.findByPk(nombre, {include: [{ model:cliente}]})
-      .then(data => {
-        if (data) {
-          res.send(data);
-        } else {
-          res.status(404).send({
-            message: `Cannot find Tutorial with id=${nombre}.`
-          });
-        }
-      })
-      .catch(err => {
-        res.status(500).send({
-          message: "Error retrieving movies with id=" + nombre
-        });
-      });
-  };
+//     reserva.findByPk(nombre, {include: [{ model:cliente}]})
+//       .then(data => {
+//         if (data) {
+//           res.send(data);
+//         } else {
+//           res.status(404).send({
+//             message: `no puede encontrar reserva con=${nombre}.`
+//           });
+//         }
+//       })
+//       .catch(err => {
+//         res.status(500).send({
+//           message: "no puede encontrar reserva con nombre=" + nombre
+//         });
+//       });
+//   };
 
-//---------- BUSCAR POR ClienteDni --------
+// //---------- BUSCAR POR ClienteDni --------
 
 
-reservaController.findByClienteDni = (req, res) => {
-  const clienteDni = req.params.clienteDni;
+// reservaController.getByClienteDni = (req, res) => {
+//   const clienteDni = req.params.clienteDni;
 
-  reserva.findByPk(clienteDni, {include: [{ model:cliente}]})
-    .then(data => {
-      if (data) {
-        res.send(data);
-      } else {
-        res.status(404).send({
-          message: `Cannot find Tutorial with id=${clienteDni}.`
-        });
-      }
-    })
-    .catch(err => {
-      res.status(500).send({
-        message: "Error retrieving movies with id=" + clienteDni
-      });
-    });
-};
+//   reserva.findByPk(clienteDni, {include: [{ model:cliente}]})
+//     .then(data => {
+//       if (data) {
+//         res.send(data);
+//       } else {
+//         res.status(404).send({
+//           message: `no puede encontrar reserva con=${clienteDni}.`
+//         });
+//       }
+//     })
+//     .catch(err => {
+//       res.status(500).send({
+//         message: "no puede encontrar reserva con clienteDni=" + clienteDni
+//       });
+//     });
+// };
 
-//---------- BUSCAR POR HotelId --------
+// //---------- BUSCAR POR HotelId --------
 
-reservaController.findByHotelId = (req, res) => {
-  const hotelId = req.params.hotelId;
+// reservaController.getByHotelId = (req, res) => {
+//   const hotelId = req.params.hotelId;
 
-  reserva.findByPk(hotelId, {include: [{ model:hotel}]})
-    .then(data => {
-      if (data) {
-        res.send(data);
-      } else {
-        res.status(404).send({
-          message: `Cannot find Tutorial with id=${hotelId}.`
-        });
-      }
-    })
-    .catch(err => {
-      res.status(500).send({
-        message: "Error retrieving movies with id=" + hotelId
-      });
-    });
-};
+//   reserva.findByPk(hotelId, {include: [{ model:hotel}]})
+//     .then(data => {
+//       if (data) {
+//         res.send(data);
+//       } else {
+//         res.status(404).send({
+//           message: `no puede encontrar reserva con=${hotelId}.`
+//         });
+//       }
+//     })
+//     .catch(err => {
+//       res.status(500).send({
+//         message: "no puede encontrar reserva con hotelId=" + hotelId
+//       });
+//     });
+// };
 
-//---------- BUSCAR POR FechaEntrada --------
+// //---------- BUSCAR POR FechaEntrada --------
 
-reservaController.findByFechaEntrada = (req, res) => {
-  const fechaEntrada = req.params.fechaEntrada;
+// reservaController.getByFechaEntrada = (req, res) => {
+//   const fechaEntrada = req.params.fechaEntrada;
 
-  reserva.findByPk(fechaEntrada, {include: [{ model:reserva}]})
-    .then(data => {
-      if (data) {
-        res.send(data);
-      } else {
-        res.status(404).send({
-          message: `Cannot find Tutorial with id=${fechaEntrada}.`
-        });
-      }
-    })
-    .catch(err => {
-      res.status(500).send({
-        message: "Error retrieving movies with id=" + fechaEntrada
-      });
-    });
-};
+//   reserva.findByPk(fechaEntrada, {include: [{ model:reserva}]})
+//     .then(data => {
+//       if (data) {
+//         res.send(data);
+//       } else {
+//         res.status(404).send({
+//           message: `no puede encontrar reserva con la fecha=${fechaEntrada}.`
+//         });
+//       }
+//     })
+//     .catch(err => {
+//       res.status(500).send({
+//         message: "no puede encontrar reserva con fecha=" + fechaEntrada
+//       });
+//     });
+// };
 
-//---------- BUSCAR POR FechaSalida --------
+// //---------- BUSCAR POR FechaSalida --------
 
-reservaController.findByFechaSalida = (req, res) => {
-  const fechaSalida = req.params.fechaSalida;
+// reservaController.getByFechaSalida = (req, res) => {
+//   const fechaSalida = req.params.fechaSalida;
 
-  reserva.findByPk(fechaSalida, {include: [{ model:reserva}]})
-    .then(data => {
-      if (data) {
-        res.send(data);
-      } else {
-        res.status(404).send({
-          message: `Cannot find Tutorial with id=${fechaSalida}.`
-        });
-      }
-    })
-    .catch(err => {
-      res.status(500).send({
-        message: "Error retrieving movies with id=" + fechaSalida
-      });
-    });
-};
+//   reserva.findByPk(fechaSalida, {include: [{ model:reserva}]})
+//     .then(data => {
+//       if (data) {
+//         res.send(data);
+//       } else {
+//         res.status(404).send({
+//           message: `no puede encontrar reserva con fecha=${fechaSalida}.`
+//         });
+//       }
+//     })
+//     .catch(err => {
+//       res.status(500).send({
+//         message: "no puede encontrar reserva con fecha=" + fechaSalida
+//       });
+//     });
+// };
 
 
 module.exports = reservaController;

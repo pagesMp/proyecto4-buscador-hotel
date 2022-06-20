@@ -13,37 +13,12 @@ module.exports = (sequelize, DataTypes) => {
 
   Cliente.init({
 
-    id: {
-      allowNull: false,
-      autoIncrement: true,
-      primaryKey: true,
-      type: DataTypes.INTEGER
-    },
-    type: {
-      type: DataTypes.STRING
-    },
-    nombre: {
-      type: DataTypes.STRING
-    },
-    dni: {
-     type: DataTypes.INTEGER,
-     foreignKey: true
-    },
-    telefono: {
-      type: DataTypes.INTEGER
-    },
-    email: {
-      type: DataTypes.STRING
-    },
-    createdAt: {
-      allowNull: false,
-      type: DataTypes.DATE
-    },
-    updatedAt: {
-      allowNull: false,
-      type: DataTypes.DATE
-    }
-
+    // id: DataTypes.INTEGER,    
+    type: DataTypes.STRING,
+    nombre: DataTypes.STRING,    
+    dni: DataTypes.INTEGER,    
+    telefono: DataTypes.INTEGER,    
+    email:DataTypes.STRING
   }, 
   
   {
