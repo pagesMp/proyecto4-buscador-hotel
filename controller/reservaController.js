@@ -3,7 +3,7 @@ const db = require("../models");
 const reserva = db.Reserva;
 // const cliente = db.Cliente;
 // const hotel = db.Hotel;
-// const Op = db.Sequelize.Op; 
+const Op = db.Sequelize.Op; 
 
 const reservaController = {}; 
 
