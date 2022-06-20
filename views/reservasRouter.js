@@ -5,10 +5,7 @@ const router = express.Router();
 //CRUD
 
  const reservaController = require('../controller/reservaController');
- router.get('/', (req, res)=>{
-
-    return res.send("pepe");
- });
+ 
  router.get('/', reservaController.findAll);
 //  router.get('/reserva/:id', reservaController.findById);
 //  router.get('/cliente/:nombre', reservaController.findByNombre);
