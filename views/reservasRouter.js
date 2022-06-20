@@ -9,7 +9,7 @@ const router = express.Router();
 
     return res.send("reservas");
  });
-//  router.get('/', reservaController.findAll);
+ router.get('/', reservaController.findAll);
 //  router.get('/reserva/:id', reservaController.findById);
 //  router.get('/cliente/:nombre', reservaController.findByNombre);
 //  router.get('/cliente/:clienteDni', reservaController.findByClienteDni);

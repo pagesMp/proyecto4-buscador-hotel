@@ -9,5 +9,5 @@ module.exports = {
   host: process.env.HOST || 'eu-cdbr-west-02.cleardb.net',
   port: process.env.MYSQL_PORT || 3306,
   dialect: process.env.DIALECT || 'mysql'
-
+  
 }

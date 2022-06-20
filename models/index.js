@@ -6,7 +6,7 @@ const Sequelize = require('sequelize');
 const basename = path.basename(__filename);
 const config = require('../config/config.js');
 const db = {};
-console.log("hola");
+// console.log("hola");
 let sequelize;
 
 sequelize = new Sequelize(config.database, config.username, config.password, config);

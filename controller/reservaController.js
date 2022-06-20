@@ -1,6 +1,6 @@
 //Importo modelo de datos
 const db = require("../models");
-// const reserva = db.Reserva;
+const reserva = db.Reserva;
 // const cliente = db.Cliente;
 // const hotel = db.Hotel;
 // const Op = db.Sequelize.Op; 
@@ -9,19 +9,19 @@ const reservaController = {};
 
 //---------- BUSCAR TODOS LOS REGISTROS -------- 
 
-// reservaController.getAll = (req, res) => {
+reservaController.findAll = (req, res) => {
     
-//     reserva.findAll({include: [{ model:reserva}]})
-//       .then(data => {
-//         res.send(data);
-//       })
-//       .catch(err => {
-//         res.status(500).send({
-//           message:
-//             err.message || "Some error occurred while retrieving reserva."
-//         });
-//       });
-// };
+    reserva.findAll({include: [{ model:reserva}]})
+      .then(data => {
+        res.send(data);
+      })
+      .catch(err => {
+        res.status(500).send({
+          message:
+            err.message || "Some error occurred while retrieving reserva."
+        });
+      });
+};
 
 // //---------- BUSCAR POR ID --------
 
