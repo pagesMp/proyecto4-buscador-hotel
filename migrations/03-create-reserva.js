@@ -16,14 +16,18 @@ module.exports = {
         // references: {
         //   model: 'Cliente',
         //   key: 'dni'
-        // }
+        // },
+        onUpdate: 'CASCADE',
+        onDelete: 'CASCADE'
       },
       hotelId:{
         type: Sequelize.INTEGER,
         // references: {
         //   model: 'Hotel',
         //   key: 'id'
-        // }
+        // },
+        onUpdate: 'CASCADE',
+        onDelete: 'CASCADE'
       },
       importeReserva: {
         type: Sequelize.INTEGER
@@ -32,6 +36,14 @@ module.exports = {
         type: Sequelize.DATE
       },
       fechaSalida: {
+        type: Sequelize.DATE
+      },
+      createdAt: {
+        allowNull: false,
+        type: Sequelize.DATE
+      },
+      updatedAt: {
+        allowNull: false,
         type: Sequelize.DATE
       }
         });
